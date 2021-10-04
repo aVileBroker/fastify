@@ -355,7 +355,7 @@ The Fastify plugin system enables developers to decorate the Fasitfy instance, a
 
 Using a Fastify plugin in TypeScript is just as easy as using one in JavaScript. Import the plugin with `import/from` and you're all set -- except there is one exception users should be aware of. 
 
-Fastify plugins use declaration merging to modify existing Fastify type interfaces (check out the previous two examples for more details). Declaration merging is not very _smart_, meaning if the pluing type definition for a plugin is within the scope of the TypeScript interpreter, then the plugin types will be included **regardless** of if the plugin is being used or not. This is an unfortunate limitation of using TypeScript and is unavoidable as of right now.
+Fastify plugins use declaration merging to modify existing Fastify type interfaces (check out the previous two examples for more details). Declaration merging is not very _smart_, meaning if the plugin type definition for a plugin is within the scope of the TypeScript interpreter, then the plugin types will be included **regardless** of if the plugin is being used or not. This is an unfortunate limitation of using TypeScript and is unavoidable as of right now.
 
 However, there are a couple of suggestions to help improve this experience:
 - Make sure the `no-unused-vars` rule is enabled in [ESLint](https://eslint.org/docs/rules/no-unused-vars) and any imported plugin are actually being loaded.
